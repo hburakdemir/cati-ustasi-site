@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kemal Usta Site Tasarımları</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Ana sayfa: beş tasarım alt alta; her kartta masaüstü + telefon görüntüsü ve kısa tarif */
+:root{
+  --bg:#F3F4F2; --surface:#FFFFFF; --fg:#1A1F24; --muted:#5B636B; --line:#D9DCD8;
+  --accent:#7A5300; --accent-bg:#F6E7BF; --btn:#1A1F24; --btn-fg:#FFFFFF;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#13171B; --surface:#1C2227; --fg:#E7EAEC; --muted:#9AA3AB; --line:#2E363D; --accent:#F2C94C; --accent-bg:#3A3012; --btn:#F2C94C; --btn-fg:#13171B; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13171B; --surface:#1C2227; --fg:#E7EAEC; --muted:#9AA3AB; --line:#2E363D; --accent:#F2C94C; --accent-bg:#3A3012; --btn:#F2C94C; --btn-fg:#13171B; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px;display:grid;gap:32px}
+h1,h2{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.4rem,6vw,3.8rem)}
+h2{font-size:clamp(1.9rem,4vw,2.6rem)}
+p{margin:0}
+.eyebrow{font:500 .75rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+header{display:grid;gap:14px;padding-bottom:28px;border-bottom:3px solid var(--fg)}
+.lede{max-width:70ch;color:var(--muted);font-size:1.05rem}
+.ortak{display:flex;flex-wrap:wrap;gap:6px}
+.ortak span{font-size:.82rem;background:var(--accent-bg);padding:3px 8px;border-radius:2px}
+.hizli{display:flex;flex-wrap:wrap;gap:8px}
+.hizli a{font:500 .85rem/1 var(--mono);color:var(--fg);text-decoration:none;border:1px solid var(--line);background:var(--surface);padding:9px 12px;border-radius:2px}
+.hizli a:hover,.hizli a:focus-visible{border-color:var(--accent);outline:none}
+.opt{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;background:var(--surface);border:1px solid var(--line);padding:24px;align-items:start;scroll-margin-top:16px}
+@media (max-width:880px){.opt{grid-template-columns:1fr}}
+.shots{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:12px;align-items:start}
+@media (max-width:480px){.shots{grid-template-columns:minmax(0,1fr) 92px}}
+.shots a{display:block}
+.shots img{width:100%;border:1px solid var(--line)}
+.txt{display:grid;gap:14px;min-width:0}
+.no{font:500 .8rem/1 var(--mono);color:var(--accent)}
+.txt q{font-size:1.1rem;font-weight:600;quotes:"“" "”"}
+.txt dl{margin:0;display:grid;gap:10px}
+.txt dt{font:500 .72rem/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.txt dd{margin:2px 0 0;font-size:.95rem}
+.ac{display:inline-flex;justify-self:start;align-items:center;gap:8px;background:var(--btn);color:var(--btn-fg);text-decoration:none;font-weight:600;padding:12px 18px;border-radius:2px}
+.ac:hover,.ac:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sonra{background:var(--surface);border:1px solid var(--line);padding:24px;display:grid;gap:10px}
+.sonra ul{margin:0;padding-left:1.1rem;display:grid;gap:6px}
+.note{font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="eyebrow">Kişisel çatı ustası · 5 tasarım</span>
+  <h1>Kemal Usta Site Tasarımları</h1>
+  <p class="lede">Aynı ustanın sitesi beş farklı tasarımla. İçerik ve sayfa akışı ortak, değişen şey görünüm ve ilk ekranda öne çıkan vaat. Bir siteye girdiğinizde en üstteki çubuktan diğer tasarımlara geçebilirsiniz.</p>
+  <div class="ortak"><span>"Ben" dili</span><span>Ücretsiz keşif</span><span>Yazılı garanti</span><span>Fotoğraf gönder, ön fiyat al</span><span>Süreç adımları</span><span>SSS</span><span>Mobilde sabit Ara + WhatsApp</span></div>
+  <nav class="hizli" aria-label="Tasarımlar"><a href="#site-1">Site 1 · Usta</a><a href="#site-2">Site 2 · Şantiye</a><a href="#site-3">Site 3 · Hızlı Fiyat</a><a href="#site-4">Site 4 · Premium</a><a href="#site-5">Site 5 · Mahalle</a></nav>
+</header>
+
+<article class="opt" id="site-1">
+  <div class="shots">
+    <a href="1-usta/index.html"><img src="onizleme/1-usta-d.jpg" alt="Site 1 Usta, masaüstü: açık zemin, büyük başlık, sağda usta fotoğrafı alanı"></a>
+    <a href="1-usta/index.html"><img src="onizleme/1-usta-m.jpg" alt="Site 1 Usta, telefon görünümü"></a>
+  </div>
+  <div class="txt">
+    <span class="no">Site 1</span>
+    <h2>Usta</h2>
+    <q>Çatınıza aracı değil, ustası gelsin.</q>
+    <dl>
+      <dt>His</dt><dd>Sıcak ve kişisel. Açık harç grisi zemin, kiremit rengi vurgu.</dd>
+      <dt>Öne çıkan</dt><dd>Ustanın portresi ve "Telefonu ben açarım" notu.</dd>
+      <dt>Kime uygun</dt><dd>Adını ve yüzünü öne çıkarmak isteyen usta.</dd>
+    </dl>
+    <a class="ac" href="1-usta/index.html">Siteyi aç</a>
+  </div>
+</article>
+
+<article class="opt" id="site-2">
+  <div class="shots">
+    <a href="2-santiye/index.html"><img src="onizleme/2-santiye-d.jpg" alt="Site 2 Şantiye, masaüstü: koyu zemin, sarı ve beyaz büyük harfli başlık"></a>
+    <a href="2-santiye/index.html"><img src="onizleme/2-santiye-m.jpg" alt="Site 2 Şantiye, telefon görünümü"></a>
+  </div>
+  <div class="txt">
+    <span class="no">Site 2</span>
+    <h2>Şantiye</h2>
+    <q>Akan çatıya aynı gün bakarım.</q>
+    <dl>
+      <dt>His</dt><dd>Güçlü ve iddialı. Koyu zemin, ikaz sarısı, şantiye tabelası harfleri.</dd>
+      <dt>Öne çıkan</dt><dd>Çatı katmanları kesiti ve "Aracı yok. Söz var." bölümü.</dd>
+      <dt>Kime uygun</dt><dd>Acil tamir ve hızı öne çıkarmak, rakiplerden en çok ayrışmak isteyen usta.</dd>
+    </dl>
+    <a class="ac" href="2-santiye/index.html">Siteyi aç</a>
+  </div>
+</article>
+
+<article class="opt" id="site-3">
+  <div class="shots">
+    <a href="3-hizli-fiyat/index.html"><img src="onizleme/3-hizli-fiyat-d.jpg" alt="Site 3 Hızlı Fiyat, masaüstü: lacivert zemin, sağda hızlı fiyat kartı"></a>
+    <a href="3-hizli-fiyat/index.html"><img src="onizleme/3-hizli-fiyat-m.jpg" alt="Site 3 Hızlı Fiyat, telefon görünümü"></a>
+  </div>
+  <div class="txt">
+    <span class="no">Site 3</span>
+    <h2>Hızlı Fiyat</h2>
+    <q>Fotoğrafını at, fiyatını söyleyeyim.</q>
+    <dl>
+      <dt>His</dt><dd>Temiz ve düzenli. Lacivert ve beyaz, amber vurgu.</dd>
+      <dt>Öne çıkan</dt><dd>İş türü ve ilçe seçilince WhatsApp'ta hazır mesaj açan fiyat kartı.</dd>
+      <dt>Kime uygun</dt><dd>En çok mesaj almak isteyen usta. Fotoğraf olmadan da güçlü durur.</dd>
+    </dl>
+    <a class="ac" href="3-hizli-fiyat/index.html">Siteyi aç</a>
+  </div>
+</article>
+
+<article class="opt" id="site-4">
+  <div class="shots">
+    <a href="4-premium/index.html"><img src="onizleme/4-premium-d.jpg" alt="Site 4 Premium, masaüstü: grafit zemin, ince serif başlık, bronz vurgu"></a>
+    <a href="4-premium/index.html"><img src="onizleme/4-premium-m.jpg" alt="Site 4 Premium, telefon görünümü"></a>
+  </div>
+  <div class="txt">
+    <span class="no">Site 4</span>
+    <h2>Premium</h2>
+    <q>Bir çatı, evin geri kalanından uzun yaşamalı.</q>
+    <dl>
+      <dt>His</dt><dd>Sakin ve seçkin. Grafit zemin, bronz vurgu, ince serif başlıklar.</dd>
+      <dt>Öne çıkan</dt><dd>Malzeme kartları (kenet, şıngıl, kil kiremit, bakır) ve imzalı garanti belgesi örneği.</dd>
+      <dt>Kime uygun</dt><dd>Villa ve müstakil evlerde daha büyük işler almak isteyen usta.</dd>
+    </dl>
+    <a class="ac" href="4-premium/index.html">Siteyi aç</a>
+  </div>
+</article>
+
+<article class="opt" id="site-5">
+  <div class="shots">
+    <a href="5-mahalle/index.html"><img src="onizleme/5-mahalle-d.jpg" alt="Site 5 Mahalle, masaüstü: açık mavi zemin, mahalle evleri ve usta kamyoneti illüstrasyonu"></a>
+    <a href="5-mahalle/index.html"><img src="onizleme/5-mahalle-m.jpg" alt="Site 5 Mahalle, telefon görünümü"></a>
+  </div>
+  <div class="txt">
+    <span class="no">Site 5</span>
+    <h2>Mahalle</h2>
+    <q>Mahallenin çatı ustası. 20 yıldır aynı telefon.</q>
+    <dl>
+      <dt>His</dt><dd>Samimi ve güler yüzlü. Açık mavi, çam yeşili, illüstrasyon.</dd>
+      <dt>Öne çıkan</dt><dd>"Sorununuz hangisi?" kartları. Her biri hazır mesajla WhatsApp'ı açar.</dd>
+      <dt>Kime uygun</dt><dd>Küçük tamir işlerini ve tavsiyeyle gelen müşteriyi önemseyen usta.</dd>
+    </dl>
+    <a class="ac" href="5-mahalle/index.html">Siteyi aç</a>
+  </div>
+</article>
+
+<section class="sonra">
+  <h2>Seçtikten sonra</h2>
+  <ul>
+    <li>Birini seçin ya da karıştırın (ör. "Site 2'nin görünümü, Site 5'in sorun kartları").</li>
+    <li>Gerçek bilgileri gönderin: ad soyad, şehir ve ilçeler, telefon, kaç yıldır usta olduğunuz, garanti süresi.</li>
+    <li>Fotoğrafları gönderin: çatıda bir portre ve 3–6 önce/sonra fotoğrafı.</li>
+    <li>Google yorumlarınız varsa linkini gönderin.</li>
+  </ul>
+  <p class="note">İsim, numara, rakamlar ve yorumlar örnektir.</p>
+</section>
+</div>
+</body>
+</html>

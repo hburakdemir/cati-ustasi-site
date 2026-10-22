@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kemal Usta · Bursa Çatı Ustası</title>
+<meta name="description" content="Çatınızın fotoğrafını WhatsApp'tan gönderin, aynı gün ön fiyat alın. Bursa'da keşif ücretsiz, işçilik garantisi yazılı.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* V3 · Hızlı Fiyat — dönüşüm odaklı: lacivert hero'da solda vaat, sağda WhatsApp'a fotoğraf gönderen fiyat kartı; altında beyaz, kartlı bölümler */
+:root{
+  --gece:#10233F;      /* hero ve koyu bantlar */
+  --gece-2:#1A3358;
+  --zemin:#F3F5F8;     /* sayfa zemini */
+  --beyaz:#FFFFFF;
+  --metin:#14202E;
+  --soluk:#5A6878;
+  --cizgi:#DCE2EA;
+  --amber:#F2A20C;     /* vurgu */
+  --amber-koyu:#9A6400;
+  --wa:#1FA855;        /* ana eylem: WhatsApp */
+  --wa-koyu:#178A45;
+  --display:"Sora",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--zemin);color:var(--metin);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased;padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+@media (min-width:900px){body{padding-bottom:0}}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+.w{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.taslak{background:var(--amber);color:var(--gece);font-size:.8rem;font-weight:600;text-align:center;padding:6px 16px}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+
+header.top{background:var(--gece);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+header.top .w{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:34px;height:34px}
+.logo b{font-family:var(--display);font-size:1.1rem;display:block;line-height:1.1}
+.logo span{font-size:.8rem;color:#A9B6C8}
+.top nav{display:none;gap:26px;font-size:.95rem;color:#C5D0DE}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:#fff}
+.tel-top{font-weight:700;text-decoration:none;white-space:nowrap;display:inline-flex;gap:8px;align-items:center}
+.tel-top span{display:none}
+@media (min-width:900px){.top nav{display:flex}.tel-top span{display:inline}}
+.tel-top i{width:36px;height:36px;border-radius:50%;background:var(--amber);color:var(--gece);display:grid;place-items:center}
+.tel-top svg{width:18px;height:18px}
+
+/* hero */
+.hero{background:var(--gece);color:#fff}
+.hero .w{display:grid;gap:36px;padding-block:44px 64px;align-items:center}
+@media (min-width:980px){.hero .w{grid-template-columns:1fr 440px;padding-block:72px 88px;gap:56px}}
+.rozet{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:6px 12px;border-radius:999px;color:#DCE4EE}
+.rozet::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--wa)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;margin-top:18px}
+.hero h1 span{color:var(--amber)}
+.hero .lede{font-size:1.15rem;color:#C5D0DE;max-width:44ch;margin-top:18px}
+.guven{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:520px}
+.guven li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;color:#DCE4EE;line-height:1.35}
+.guven li::before{content:"";flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;background:var(--amber) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310233F' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.guven b{color:#fff}
+
+/* fiyat kartı */
+.kart{background:var(--beyaz);color:var(--metin);border-radius:18px;padding:26px;box-shadow:0 24px 60px rgba(4,12,24,.35);display:grid;gap:18px}
+.kart h2{font-size:1.35rem;font-weight:700}
+.kart .alt{font-size:.92rem;color:var(--soluk);margin-top:4px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:10px}
+legend{font-weight:700;font-size:.9rem;margin-bottom:8px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{border:1.5px solid var(--cizgi);border-radius:999px;padding:8px 14px;font-size:.92rem;font-weight:600;cursor:pointer;user-select:none;transition:border-color .15s,background .15s}
+.chips label:hover{border-color:#B7C2D0}
+.chips input:checked+label{background:var(--gece);border-color:var(--gece);color:#fff}
+.chips input:focus-visible+label{outline:3px solid var(--amber);outline-offset:2px}
+.alan{display:grid;gap:6px}
+.alan label{font-weight:700;font-size:.9rem}
+select,textarea{font:inherit;font-size:1rem;border:1.5px solid var(--cizgi);border-radius:10px;padding:11px 12px;background:var(--beyaz);color:var(--metin);width:100%}
+textarea{resize:vertical;min-height:70px}
+.gonder{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--wa);color:#fff;font:700 1.05rem/1.2 var(--body);border:0;border-radius:12px;padding:16px;cursor:pointer;text-decoration:none}
+.gonder:hover{background:var(--wa-koyu)}
+.gonder svg{width:22px;height:22px}
+.kart .veya{font-size:.92rem;color:var(--soluk);text-align:center}
+.kart .veya a{font-weight:700;color:var(--metin)}
+
+/* şerit */
+.serit{background:var(--beyaz);border-bottom:1px solid var(--cizgi)}
+.serit .w{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding-block:28px}
+@media (min-width:800px){.serit .w{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.serit b{display:block;font-family:var(--display);font-size:1.6rem;font-weight:800;line-height:1.1}
+.serit span{font-size:.92rem;color:var(--soluk)}
+
+section.blok{padding-block:72px}
+.bas{display:grid;gap:10px;margin-bottom:36px;max-width:640px}
+.bas .ust{font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber-koyu)}
+.bas h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800}
+.bas p{color:var(--soluk);font-size:1.08rem}
+
+.acil{background:#FFF4DC;border-block:1px solid #F3D99A}
+.acil .w{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;padding-block:24px}
+.acil div{display:grid;gap:4px;max-width:720px}
+.acil b{font-family:var(--display);font-size:1.25rem}
+.acil span{color:#5B4A22}
+.acil a{background:var(--gece);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:10px;white-space:nowrap}
+
+.hiz{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.hiz article{background:var(--beyaz);border:1px solid var(--cizgi);border-radius:14px;padding:24px;display:grid;gap:10px;align-content:start}
+.hiz .ikon{width:44px;height:44px;border-radius:12px;background:#E8EEF6;display:grid;place-items:center;color:var(--gece)}
+.hiz .ikon svg{width:24px;height:24px}
+.hiz h3{font-size:1.2rem;font-weight:700}
+.hiz p{color:var(--soluk);font-size:.98rem}
+.hiz .sure{font-size:.85rem;font-weight:700;color:var(--amber-koyu)}
+
+.surec{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;padding:0;margin:0;counter-reset:a}
+.surec li{list-style:none;counter-increment:a;position:relative;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:14px;padding:22px;display:grid;gap:8px;align-content:start}
+.surec li::before{content:counter(a);width:36px;height:36px;border-radius:50%;background:var(--gece);color:#fff;display:grid;place-items:center;font:700 1rem var(--display)}
+.surec h3{font-size:1.1rem;font-weight:700}
+.surec p{color:var(--soluk);font-size:.96rem}
+
+.isler{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
+.is{background:var(--beyaz);border:1px solid var(--cizgi);border-radius:14px;overflow:hidden}
+.cift{display:grid;grid-template-columns:1fr 1fr}
+.ph{aspect-ratio:1;display:flex;align-items:flex-end;padding:10px;font-size:.75rem;font-weight:700;letter-spacing:.06em;color:#fff}
+.ph.once{background:repeating-linear-gradient(135deg,#7C8592 0 14px,#87909C 14px 28px)}
+.ph.sonra{background:radial-gradient(ellipse 14px 10px at 14px 0,#C7592B 0 96%,transparent 100%) 0 0/28px 18px,radial-gradient(ellipse 14px 10px at 14px 0,#C7592B 0 96%,transparent 100%) 14px 9px/28px 18px,#87341A}
+.ph span{background:rgba(16,35,63,.7);padding:3px 8px;border-radius:6px}
+.is p{padding:14px 16px;font-size:.95rem;color:var(--soluk)}
+.is p b{color:var(--metin)}
+
+.neden{background:var(--gece);color:#fff}
+.neden .w{display:grid;gap:36px;padding-block:72px}
+@media (min-width:950px){.neden .w{grid-template-columns:.8fr 1.2fr;align-items:start}}
+.neden h2{font-size:clamp(1.9rem,3.8vw,2.7rem);font-weight:800}
+.neden .bas p{color:#C5D0DE}
+.maddeler{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}
+.maddeler div{background:var(--gece-2);border-radius:14px;padding:20px;display:grid;gap:6px}
+.maddeler b{font-family:var(--display);font-size:1.05rem}
+.maddeler span{color:#C5D0DE;font-size:.95rem}
+
+.puan{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.puan b{font-family:var(--display);font-size:2.4rem;line-height:1}
+.yildiz{color:var(--amber);letter-spacing:2px}
+.puan span{color:var(--soluk);font-size:.92rem}
+.yorum{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.yorum figure{margin:0;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:14px;padding:22px;display:grid;gap:12px;align-content:start}
+.yorum blockquote{margin:0}
+.yorum figcaption{font-size:.9rem;color:var(--soluk)}
+.ornek{font-size:.85rem;color:var(--soluk);margin-top:14px}
+
+.iki{display:grid;gap:48px}
+@media (min-width:950px){.iki{grid-template-columns:.8fr 1.2fr}}
+.ilce{display:flex;flex-wrap:wrap;gap:8px}
+.ilce span{background:var(--beyaz);border:1px solid var(--cizgi);padding:7px 12px;border-radius:999px;font-size:.95rem}
+.sss{background:var(--beyaz);border:1px solid var(--cizgi);border-radius:14px;padding:4px 22px}
+details{border-bottom:1px solid var(--cizgi);padding:16px 0}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;width:12px;height:12px;margin-top:6px;border-right:2.5px solid var(--soluk);border-bottom:2.5px solid var(--soluk);transform:rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg);margin-top:10px}
+details p{margin-top:8px;color:var(--soluk)}
+
+.son .w{padding-block:16px 72px}
+.son-kutu{background:var(--gece);color:#fff;border-radius:20px;padding:clamp(28px,5vw,56px);display:grid;gap:20px;justify-items:start}
+.son-kutu h2{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:800;max-width:20ch}
+.son-kutu p{color:#C5D0DE;max-width:48ch}
+.son-kutu .btns{display:flex;flex-wrap:wrap;gap:12px}
+.son-kutu .gonder{width:auto;padding:15px 22px}
+.btn-acik{display:inline-flex;align-items:center;background:#fff;color:var(--gece);font-weight:700;padding:15px 22px;border-radius:12px;text-decoration:none}
+footer.alt{padding-block:24px;color:var(--soluk);font-size:.9rem;border-top:1px solid var(--cizgi)}
+footer.alt .w{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+.cubuk{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1.25fr;gap:8px;background:var(--beyaz);border-top:1px solid var(--cizgi);box-shadow:0 -6px 20px rgba(16,35,63,.08);padding:8px max(10px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px))}
+.cubuk a{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:12px 8px;font-weight:700;text-decoration:none;line-height:1.15;text-align:center}
+.cubuk a small{display:block;font-weight:500;font-size:.75rem;opacity:.85}
+.cubuk svg{width:20px;height:20px;flex:none}
+.cubuk .c-ara{background:var(--gece);color:#fff}
+.cubuk .c-wa{background:var(--wa);color:#fff}
+@media (min-width:900px){.cubuk{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="taslak">Tasarım taslağı · isim, numara, rakamlar ve yorumlar örnektir</div>
+
+<header class="top">
+  <div class="w">
+    <a class="logo" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 21L20 7l16 14" fill="none" stroke="#F2A20C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v13h20V20" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg><span><b>Kemal Usta</b><span>Bursa çatı ustası</span></span></a>
+    <nav aria-label="Sayfa içi"><a href="#hizmetler">Hizmetler</a><a href="#nasil">Nasıl çalışır</a><a href="#isler">İşler</a><a href="#sss">SSS</a></nav>
+    <a class="tel-top" href="tel:+905320000000"><span>0532 000 00 00</span><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></i></a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="w">
+    <div>
+      <span class="rozet">Bursa geneli · aynı gün keşif</span>
+      <h1>Fotoğrafını at, <span>fiyatını söyleyeyim.</span></h1>
+      <p class="lede">Ben Kemal Arslan, 2004'ten beri Bursa'da çatı ustasıyım. Çatınızın fotoğrafına bakıp aynı gün ön fiyat veririm. Keşif ücretsiz, garanti yazılı.</p>
+      <ul class="guven">
+        <li><span><b>Aynı gün</b> ücretsiz keşif</span></li>
+        <li><span><b>5 yıl</b> yazılı işçilik garantisi</span></li>
+        <li><span><b>Net teklif</b>, iş ortasında fiyat değişmez</span></li>
+        <li><span><b>Aracı yok</b>, telefonu usta açar</span></li>
+      </ul>
+    </div>
+
+    <form class="kart" id="fiyat" aria-labelledby="fiyat-b">
+      <div><h2 id="fiyat-b">Hızlı fiyat al</h2><p class="alt">İki seçim yapın, WhatsApp'ta mesajınız hazır açılsın. Fotoğrafı oradan ekleyin.</p></div>
+      <fieldset>
+        <legend>Ne oldu?</legend>
+        <div class="chips">
+          <input type="radio" name="is" id="is-akinti" value="Çatım akıyor" checked><label for="is-akinti">Çatım akıyor</label>
+          <input type="radio" name="is" id="is-aktarma" value="Kiremit aktarma"><label for="is-aktarma">Kiremit aktarma</label>
+          <input type="radio" name="is" id="is-yalitim" value="Yalıtım / membran"><label for="is-yalitim">Yalıtım / membran</label>
+          <input type="radio" name="is" id="is-oluk" value="Oluk"><label for="is-oluk">Oluk</label>
+          <input type="radio" name="is" id="is-sifir" value="Sıfırdan çatı"><label for="is-sifir">Sıfırdan çatı</label>
+        </div>
+      </fieldset>
+      <div class="alan">
+        <label for="ilce">İlçe</label>
+        <select id="ilce" name="ilce">
+          <option>Nilüfer</option><option>Osmangazi</option><option>Yıldırım</option><option>Mudanya</option><option>Gemlik</option><option>Gürsu</option><option>Kestel</option><option>İnegöl</option><option>Diğer</option>
+        </select>
+      </div>
+      <div class="alan">
+        <label for="not">Not (isteğe bağlı)</label>
+        <textarea id="not" name="not" placeholder="Örn. salon tavanından damlıyor, iki katlı ev"></textarea>
+      </div>
+      <a class="gonder" id="gonder" href="https://wa.me/905320000000"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>WhatsApp'ta devam et</a>
+      <p class="veya">ya da hemen arayın: <a href="tel:+905320000000">0532 000 00 00</a></p>
+    </form>
+  </div>
+</section>
+
+<div class="acil">
+  <div class="w">
+    <div><b>Çatınız şu an mı akıyor?</b><span>Altına kova koyun, su prize yakınsa o hattın sigortasını kapatın. Sonra arayın, yola çıkayım.</span></div>
+    <a href="tel:+905320000000">Acil ara</a>
+  </div>
+</div>
+
+<div class="serit">
+  <div class="w">
+    <div><b>2004'ten beri</b><span>Bursa'da çatı ustası</span></div>
+    <div><b>600+ çatı</b><span>aktarma, tamir, yalıtım</span></div>
+    <div><b>4,9 ★</b><span>Google puanı</span></div>
+    <div><b>10 ilçe</b><span>Bursa geneli hizmet</span></div>
+  </div>
+</div>
+
+<section class="blok" id="hizmetler">
+  <div class="w">
+    <div class="bas"><span class="ust">Hizmetler</span><h2>Çatıyla ilgili her iş, tek ustadan.</h2><p>Süreler ortalamadır. Sizin çatınız için net süreyi keşifte söylerim.</p></div>
+    <div class="hiz">
+      <article><span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 12l9-8 9 8"/><path d="M6 10.5V20h12v-9.5"/></svg></span><h3>Kiremit aktarma</h3><p>Kiremitler sökülür, altına su yalıtım örtüsü serilir, kırıklar değişir.</p><span class="sure">120 m² · 3–4 gün</span></article>
+      <article><span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3c3 4 5 6.7 5 9.5a5 5 0 0 1-10 0C7 9.7 9 7 12 3z"/></svg></span><h3>Akıntı tamiri</h3><p>Suyun girdiği yer bulunur. Baca dibi, mahya ve dere hatları onarılır.</p><span class="sure">Çoğu tamir · aynı gün</span></article>
+      <article><span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="8" rx="1"/><path d="M3 12h18"/></svg></span><h3>Membran yalıtım</h3><p>Teras ve düz çatılarda şaloma membran ya da sıvı yalıtım.</p><span class="sure">80 m² · 1–2 gün</span></article>
+      <article><span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 7l14 10M19 7L5 17"/></svg></span><h3>Isı yalıtımı</h3><p>Mertek arasına taş yünü ya da XPS. Kışın ısı kaybını azaltır.</p><span class="sure">Aktarmayla birlikte</span></article>
+      <article><span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h14v4H3zM15 10v10"/></svg></span><h3>Oluk ve iniş borusu</h3><p>Yerinde bükülen eksiz oluk, tıkalı oluk temizliği.</p><span class="sure">Bir ev · yarım gün</span></article>
+      <article><span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M2 13L12 5l10 8M5 11v9M19 11v9M9 20v-6h6v6"/></svg></span><h3>Sıfırdan çatı</h3><p>Ahşap ya da çelik karkas, kiremit, kenet ya da şıngıl kaplama.</p><span class="sure">Keşifte planlanır</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="nasil" style="padding-top:0">
+  <div class="w">
+    <div class="bas"><span class="ust">Nasıl çalışır</span><h2>Fotoğraftan teslime dört adım.</h2></div>
+    <ol class="surec">
+      <li><h3>Fotoğraf gönderin</h3><p>WhatsApp'tan çatının ve tavandaki lekenin fotoğrafını atın. Aynı gün ön fiyat söylerim.</p></li>
+      <li><h3>Ücretsiz keşif</h3><p>Çatıya çıkar, suyun girdiği yeri yerinde gösteririm.</p></li>
+      <li><h3>Yazılı teklif</h3><p>Malzeme markası, işçilik ve süre ayrı ayrı yazılır.</p></li>
+      <li><h3>Temiz teslim</h3><p>Moloz kaldırılır, iş birlikte kontrol edilir, garanti belgesi verilir.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="blok" id="isler" style="padding-top:0">
+  <div class="w">
+    <div class="bas"><span class="ust">Yaptığım işler</span><h2>Önce ve sonra.</h2></div>
+    <div class="isler">
+      <div class="is"><div class="cift"><div class="ph once"><span>ÖNCE</span></div><div class="ph sonra"><span>SONRA</span></div></div><p><b>Nilüfer, müstakil ev</b> · kiremit aktarma, 140 m², 4 gün</p></div>
+      <div class="is"><div class="cift"><div class="ph once"><span>ÖNCE</span></div><div class="ph sonra"><span>SONRA</span></div></div><p><b>Osmangazi, apartman</b> · baca dibi akıntısı, 1 gün</p></div>
+      <div class="is"><div class="cift"><div class="ph once"><span>ÖNCE</span></div><div class="ph sonra"><span>SONRA</span></div></div><p><b>Mudanya, yazlık</b> · eksiz oluk, yarım gün</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="neden">
+  <div class="w">
+    <div class="bas" style="margin-bottom:0"><span class="ust" style="color:var(--amber)">Neden ben</span><h2>Firmaya değil, işi yapacak ustaya ulaşıyorsunuz.</h2><p>Keşfe gelen, teklifi yazan ve çatıya çıkan aynı kişi.</p></div>
+    <div class="maddeler">
+      <div><b>Fiyat değişmez</b><span>Görünmeyen bir çürük çıkarsa önce fotoğrafını gösterir, onayınızı alırım.</span></div>
+      <div><b>Malzeme kâğıtta</b><span>Kiremidin, membranın, yalıtımın markası ve kalınlığı teklifte yazar.</span></div>
+      <div><b>Çatı açık kalmaz</b><span>Akşam olmadan açtığım yeri kapatırım.</span></div>
+      <div><b>Garanti yazılı</b><span>İşçiliğe 5 yıl. Akıntı olursa ücretsiz bakarım.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="w">
+    <div class="bas" style="margin-bottom:20px"><span class="ust">Yorumlar</span><h2>Komşularınız ne diyor?</h2></div>
+    <div class="puan"><b>4,9</b><div><div class="yildiz" aria-label="5 üzerinden 4,9">★★★★★</div><span>Google'da 87 değerlendirme</span></div></div>
+    <div class="yorum">
+      <figure><blockquote>Yağmurdan sonra aradım, aynı akşam geldi. Baca dibini bir günde bitirdi, giderken çatıyı da süpürdü.</blockquote><figcaption>Ayşe H. · Osmangazi</figcaption></figure>
+      <figure><blockquote>Üç teklif aldık, en net olanı onunkiydi. Malzemeyi ve günü yazdı, dediği günde teslim etti.</blockquote><figcaption>Mehmet K. · Nilüfer</figcaption></figure>
+      <figure><blockquote>Fotoğrafı attım, telefonda fiyat söyledi. Keşifte de aynı fiyat çıktı.</blockquote><figcaption>Selin T. · Mudanya</figcaption></figure>
+    </div>
+    <p class="ornek">Puan ve yorumlar örnektir. Yayına almadan önce Google profilinizdekilerle değiştirilecek.</p>
+  </div>
+</section>
+
+<section class="blok" id="sss" style="padding-top:0">
+  <div class="w iki">
+    <div><div class="bas" style="margin-bottom:20px"><span class="ust">Hizmet bölgesi</span><h2>Bursa'nın her ilçesine gelirim.</h2></div>
+      <div class="ilce"><span>Nilüfer</span><span>Osmangazi</span><span>Yıldırım</span><span>Mudanya</span><span>Gemlik</span><span>Gürsu</span><span>Kestel</span><span>İnegöl</span><span>Görükle</span><span>Karacabey</span></div></div>
+    <div><div class="bas" style="margin-bottom:20px"><span class="ust">SSS</span><h2>Sık sorulanlar</h2></div>
+      <div class="sss">
+        <details><summary>Keşif gerçekten ücretsiz mi?</summary><p>Evet. Bursa içinde keşif ücreti almam, iş bana kalmasa da.</p></details>
+        <details><summary>Fotoğrafla verdiğiniz fiyat kesin mi?</summary><p>Fotoğrafla verdiğim fiyat ön fiyattır. Kesin fiyatı keşiften sonra yazılı olarak veririm. Çoğu işte ikisi aynı çıkar.</p></details>
+        <details><summary>Fiyat iş ortasında değişir mi?</summary><p>Hayır. Yazılı teklifteki fiyat geçerlidir. Görünmeyen bir çürük çıkarsa önce fotoğrafını gösterir, onayınızı alırım.</p></details>
+        <details><summary>Garanti neyi kapsıyor?</summary><p>5 yıl boyunca işçilikten kaynaklı her akıntıya ücretsiz bakarım. Malzemede üreticinin garantisi ayrıca geçerlidir.</p></details>
+        <details><summary>Fatura veriyor musunuz?</summary><p>Evet, her iş için fatura keserim.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="son">
+  <div class="w">
+    <div class="son-kutu">
+      <h2>Çatınızın fotoğrafını şimdi gönderin.</h2>
+      <p>Aynı gün ön fiyat, ücretsiz keşif, yazılı teklif.</p>
+      <div class="btns">
+        <a class="gonder" href="https://wa.me/905320000000"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp'tan gönder</a>
+        <a class="btn-acik" href="tel:+905320000000">0532 000 00 00</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="alt"><div class="w"><span>Kemal Arslan · Çatı Ustası · Bursa</span><span>Her gün 08:00–20:00 · Acil 7/24</span></div></footer>
+
+<nav class="cubuk" aria-label="Hızlı iletişim">
+  <a class="c-ara" href="tel:+905320000000"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Ara</span></a>
+  <a class="c-wa" href="#fiyat"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span>Fotoğraf gönder<small>WhatsApp'tan ön fiyat</small></span></a>
+</nav>
+
+<script>
+(function(){
+  var TEL='905320000000';
+  var form=document.getElementById('fiyat'), btn=document.getElementById('gonder');
+  function link(){
+    var is=(form.querySelector('input[name="is"]:checked')||{}).value||'';
+    var ilce=form.ilce.value, not=form.not.value.trim();
+    var msg='Merhaba Kemal Usta. '+is+' ('+ilce+'). '+(not?not+' ':'')+'Fotoğrafları gönderiyorum.';
+    btn.href='https://wa.me/'+TEL+'?text='+encodeURIComponent(msg);
+  }
+  form.addEventListener('input',link);
+  form.addEventListener('change',link);
+  form.addEventListener('submit',function(e){e.preventDefault();});
+  link();
+})();
+</script>
+</body>
+</html>
